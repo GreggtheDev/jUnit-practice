@@ -1,8 +1,17 @@
 package org.example;
 
+/**
+ * A utility class that provides a static method to sort an array using the Bubble Sort algorithm.
+ */
 public class BubbleSort {
-    // Function to sort an array using bubble sort
-    static void bubbleSort(int arr[], int N) {
+
+    /**
+     * Sorts the specified array using the Bubble Sort algorithm.
+     *
+     * @param arr the array to be sorted
+     */
+    public static void bubbleSort(int arr[]) {
+        int N = arr.length;
         for (int i = 0; i < N - 1; i++) {
             for (int j = 0; j < N - i - 1; j++) {
                 // Swap if the element found is greater than the next element
@@ -16,15 +25,28 @@ public class BubbleSort {
         }
     }
 
-    // Driver method to test above
+    /**
+     * Prints the elements of the specified array to the standard output.
+     *
+     * @param arr the array whose elements are to be printed
+     */
+    public static void printArray(int arr[]) {
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+
+    /**
+     * Main method to test the bubble sort implementation.
+     *
+     * @param args command-line arguments (not used)
+     */
     public static void main(String args[]) {
         int arr[] = {4, 1, 3, 9, 7};
-        int N = arr.length;
 
-        bubbleSort(arr, N);
+        bubbleSort(arr);
         System.out.println("Sorted array:");
-        for (int i = 0; i < N; i++) {
-            System.out.print(arr[i] + " ");
-        }
+        printArray(arr);
     }
 }

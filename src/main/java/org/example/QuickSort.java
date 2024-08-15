@@ -1,8 +1,18 @@
 package org.example;
 
-class QuickSort {
+/**
+ * A class that provides methods to sort an array using the QuickSort algorithm.
+ */
+public class QuickSort {
 
-    // Function to partition the array on the basis of pivot element
+    /**
+     * Partitions the array around the pivot element.
+     *
+     * @param arr  the array to be partitioned
+     * @param low  the starting index of the partition
+     * @param high the ending index of the partition
+     * @return the partition index
+     */
     int partition(int arr[], int low, int high) {
         int pivot = arr[high]; // pivot
         int i = (low - 1); // index of smaller element
@@ -27,8 +37,14 @@ class QuickSort {
         return i + 1;
     }
 
-    // The main function that implements QuickSort
-    void quickSort(int arr[], int low, int high) {
+    /**
+     * Sorts the array using the QuickSort algorithm.
+     *
+     * @param arr  the array to be sorted
+     * @param low  the starting index
+     * @param high the ending index
+     */
+    public void quickSort(int arr[], int low, int high) {
         if (low < high) {
             // pi is partitioning index, arr[pi] is now at right place
             int pi = partition(arr, low, high);
@@ -40,14 +56,23 @@ class QuickSort {
         }
     }
 
-    // Utility function to print the array
-    void printArray(int arr[], int size) {
+    /**
+     * Utility function to print the array.
+     *
+     * @param arr  the array to be printed
+     * @param size the size of the array
+     */
+    public void printArray(int arr[], int size) {
         for (int i = 0; i < size; i++)
             System.out.print(arr[i] + " ");
         System.out.println();
     }
 
-    // Driver code
+    /**
+     * Main method for testing the QuickSort class.
+     *
+     * @param args command-line arguments (not used)
+     */
     public static void main(String args[]) {
         QuickSort qs = new QuickSort();
         int arr[] = { 4, 1, 3, 9, 7 };
